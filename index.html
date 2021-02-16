@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Are SF Public Schools Open Yet?</title>
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                font-size: 4rem;
+                text-align: center;
+                 margin-left: 30px;
+                 margin-right: 30px;
+            }
+        </style>
+    <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            window.onload = function(){
+
+
+                 var date1, date2;
+                 //define two date object variables with dates inside it
+                 closure = new Date("03/16/2020");
+                 today = new Date();
+
+                 //calculate time difference
+                 var time_difference = today.getTime() - closure.getTime();
+
+                 //calculate days difference by dividing total milliseconds in a day
+                 var days_difference = time_difference / (1000 * 60 * 60 * 24);
+                 days_difference = Math.trunc(days_difference)
+
+                 document.getElementById('closure_day').innerHTML = days_difference;
+
+            };
+        </script>
+        <h1> NO!!!</h1>
+        <h3>
+            Public Schools in San Francisco have been closed for
+            <a href="https://www.sfgate.com/news/article/Bay-Area-school-closures-coronavirus-sf-san-jose-15117093.php" target="_blank">
+                <div id="closure_day"></div>
+            </a>
+            days
+        </h3>
+    </body>
+</html>
