@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JG0G70DWKL"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-JG0G70DWKL');
-        </script>
         <title>Are SF Public Schools Open Yet?</title>
         <style>
             body {
                 background-color: #000000;
                 color: #ffffff;
                 font-size: 4rem;
-                text-align: center;
+                text-align: left;
                  margin-left: 30px;
                  margin-right: 30px;
+            }
+            h1 {
+                text-align: center;
+            }
+            #closure_day {
+                color: #ff0000;
+            }
+            #source {
+                font-size: 2rem;
             }
         </style>
     <meta charset="utf-8"/>
@@ -31,10 +31,11 @@
                  var date1, date2;
                  //define two date object variables with dates inside it
                  closure = new Date("03/16/2020");
+                 partialOpening = new Date("04/12/2021");
                  today = new Date();
 
                  //calculate time difference
-                 var time_difference = today.getTime() - closure.getTime();
+                 var time_difference = partialOpening.getTime() - closure.getTime();
 
                  //calculate days difference by dividing total milliseconds in a day
                  var days_difference = time_difference / (1000 * 60 * 60 * 24);
@@ -44,13 +45,18 @@
 
             };
         </script>
-        <h1> NO!!!</h1>
-        <h3>
-            Public Schools in San Francisco have been closed for
-            <a href="https://www.sfgate.com/news/article/Bay-Area-school-closures-coronavirus-sf-san-jose-15117093.php" target="_blank">
-                <div id="closure_day"></div>
-            </a>
-            days
-        </h3>
+        <h1> NOT ALL OF THEM!</h1>
+        <ul>
+            <li>
+                Public Schools in San Francisco have been closed for <span id="closure_day"></span> days
+                <a id="source" href="https://www.sfgate.com/news/article/Bay-Area-school-closures-coronavirus-sf-san-jose-15117093.php" target="_blank">
+                    [source]
+                </a>
+            </li>
+            <li>
+                Preschool through second-graders are back to the classrooms starting April 12, 2021
+                <a id="source" href="https://www.sfchronicle.com/home/article/Bay-Briefing-San-Francisco-schools-welcome-back-16095957.php" target="_blank"> [source] </a>
+            </li
+        </ul>
     </body>
 </html>
